@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --color-linaer-5: linear-gradient(165deg, #ffffff80 0.51%, #fff0 64.43%);
   --text-primary: #1D1F21;
   --site-bg : #E1E1E1;
   --primary: #2E57A2;
