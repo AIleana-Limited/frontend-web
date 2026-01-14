@@ -12,7 +12,7 @@ const avatars = [
 
 export default function TrustedClient() {
   return (
-    <section className="mt-15 px-4">
+    <section className="mt-20 px-4">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-[#111418] px-6 pb-10 pt-14 text-center md:px-10 lg:pt-22">
         {/* SVG Background */}
         <Image
