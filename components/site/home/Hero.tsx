@@ -1,13 +1,14 @@
 import React from 'react'
 import { Input } from "@/components/ui/input"
+import { ArrowRight } from 'lucide-react'
 
 const Hero = () => {
   return (
     <section className='w-full mt-8 p-2'>
-    <div className='max-w-7xl bg-white rounded-4xl p-16 mx-auto flex justify-between items-center'>
-       <div data-hero-left className="space-y-6">
+    <div className='max-w-7xl bg-white rounded-4xl gap-10 md:p-16 p-8 mx-auto flex lg:flex-row flex-col justify-between items-center'>
+       <div data-hero-left className="space-y-6 w-full">
             {/* Badge */}
-            <div className="inline-flex w-fit rounded-full border border-[#C7A55C] bg-[#F5E4AF] px-4 py-2 text-xs font-medium text-black/70">
+            <div className="inline-flex max-w-md rounded-full border border-[#C7A55C] bg-[#F5E4AF] px-4 py-2 text-xs font-medium text-black/70">
               The Future Of Social Commerce
             </div>
 
@@ -19,7 +20,7 @@ const Hero = () => {
                 Becomes Income
               </h1>
 
-              <p className="max-w-xl text-sm leading-relaxed text-[#1D1F21] md:text-base">
+              <p className="md:max-w-xl w-full text-sm leading-relaxed text-[#1D1F21] md:text-base">
                 Aileana is the first social network where every post, chat, and
                 live session can generate income. Powered by AIVA AI, your
                 social activity becomes your revenue stream.
@@ -27,19 +28,20 @@ const Hero = () => {
             </div>
 
             {/* Email */}
-            <div className="flex w-full items-center gap-3">
+            <div className="grid grid-cols-3 w-full items-center gap-3">
               <Input
                 placeholder="Enter your email"
-                className="h-12 rounded-full max-w-lg border-black/10 bg-white/60 px-5"
+                className="h-12 rounded-full  col-span-2 max-w-lg border-black/10 bg-white/60 px-5"
               />
-              <button className="h-12 rounded-full w-80  bg-primary text-white">
-                Get early access
+              <button className="h-12 max-lg:w-20 rounded-full  bg-primary
+               text-white inline-flex gap-1 items-center justify-center">
+                <span className='lg:block hidden'>Get early access</span><ArrowRight />
               </button>
             </div>
           </div>
 
-      <div>
-
+      <div className='w-full'>
+    
       </div>
     </div>
     </section>
