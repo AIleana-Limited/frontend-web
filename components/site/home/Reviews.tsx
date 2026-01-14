@@ -2,6 +2,7 @@
 import Image, { StaticImageData } from "next/image";
 import { Twitter } from "lucide-react";
 import { Avatar } from "@/app/assest/images";
+import Link from "next/link";
 
 type Review = {
   name: string;
@@ -96,7 +97,7 @@ function ReviewCard({ name, location, avatar, message, delay, profileUrl }: Revi
         </a>
       </div>
 
-      <p className="pt-6 border-t text-sm">
+      <p className="pt-6 border-t  text-sm">
         {message}
       </p>
     </article>
@@ -106,7 +107,7 @@ function ReviewCard({ name, location, avatar, message, delay, profileUrl }: Revi
 export default function Reviews() {
   return (
 
-      <section className="mx-auto w-full px-4 py-16 space-y-10">
+      <section className="mx-auto w-full px-4 py-16 flex flex-col space-y-10">
          <div className="max-w-7xl mx-auto flex flex-col gap-5.5 justify-centery items-center">
           {/* Badge */}
           <div className="inline-flex max-w-md rounded-full border border-[#C7A55C] bg-[#F5E4AF] px-4 py-2 text-xs font-medium text-black/70">
@@ -123,6 +124,18 @@ export default function Reviews() {
         <ReviewCard key={review.name} {...review} />
       ))}
     </div>
+<div className="mx-auto max-w-40">
+      <button  className="inline-flex items-center justify-center 
+              rounded-full px-6 py-3 text-sm font-medium border-primary
+               border-2 text-primary transition hover:bg-primary/10">
+                  <Link
+                    href="/get-early-access"
+                    >
+                    View Reviews
+                  </Link>
+                      </button>
+                          
+</div>
     </section>
     
   );
