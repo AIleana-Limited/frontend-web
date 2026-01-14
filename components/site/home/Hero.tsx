@@ -35,7 +35,7 @@ const Hero = () => {
               />
               <button className="h-12 max-lg:w-20 rounded-full  bg-primary
                text-white inline-flex gap-1 items-center justify-center">
-                <span className='lg:block hidden'>Get early access</span><ArrowRight />
+                <span className='lg:block hidden'>Get early access</span><ArrowRight className='lg:hidden block'/>
               </button>
             </div>
           </div>
