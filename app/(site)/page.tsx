@@ -1,4 +1,5 @@
 import Hero from "@/components/site/home/Hero";
+import Reviews from "@/components/site/home/Reviews";
 import TrustedClient from "@/components/site/home/TrustedClient";
 import UseCase from "@/components/site/home/UseCase";
 import React from "react";
@@ -28,6 +29,7 @@ const page = () => {
         </div>
       </section>
       <UseCase />
+      <Reviews />
     </div>
   );
 };

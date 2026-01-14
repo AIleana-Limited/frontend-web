@@ -5,6 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --review-card-bg : #EBEBEB;
   --color-linaer-5: linear-gradient(165deg, #ffffff80 0.51%, #fff0 64.43%);
   --text-primary: #1D1F21;
   --site-bg : #E1E1E1;
@@ -92,6 +93,7 @@ body {
 }
 
 .dark {
+  --review-card-bg: oklch(0.145 0 0);
    --text-primary: #fff;
   --site-bg: #181d26;
   --background: oklch(0.145 0 0);
@@ -100,7 +102,7 @@ body {
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #2E57A2;;
+  --primary: #2E57A2;
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
