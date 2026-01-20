@@ -6,6 +6,8 @@ import Client4 from './gray-client-logo-4.svg'
 import Client5 from './gray-client-logo-5.svg'
 import Avatar from './avatar.png'
 import Digital from './digital.png'
+import Ronaldo from './ronaldo.jpg'
+import Shoes from './shoes.jpg'
 
-export {BgTrustedClient, Client1, Client2, 
-        Client3, Client4, Client5, Avatar, Digital}
+export {BgTrustedClient, Client1, Client2, Shoes,
+        Client3, Client4, Client5, Avatar, Digital, Ronaldo}

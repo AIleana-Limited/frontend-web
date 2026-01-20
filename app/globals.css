@@ -4,7 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+/* Hide scrollbar but keep scrolling */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
 :root {
+  --surface-1 : #f3f2f2;
   --review-card-bg : #EBEBEB;
   --color-linaer-5: linear-gradient(165deg, #ffffff80 0.51%, #fff0 64.43%);
   --text-primary: #1D1F21;
@@ -93,6 +106,7 @@ body {
 }
 
 .dark {
+  --surface-1 : #202020;
   --review-card-bg: oklch(0.145 0 0);
    --text-primary: #fff;
   --site-bg: #181d26;
@@ -137,3 +151,5 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+

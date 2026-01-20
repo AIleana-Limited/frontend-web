@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import ThemeToggle from "@/components/site/ThemeToggle";
 
-
 const interTight = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-inter-tight",
@@ -22,11 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={interTight.variable}>
-      <body className="antialiased">
-        <ThemeProvider>{children}
+    <html lang="en" className={interTight.variable} suppressHydrationWarning>
+      <body className="antialiased bg-background text-foreground">
+        <ThemeProvider>
+          {children}
           <ThemeToggle />
-          </ThemeProvider></body>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
