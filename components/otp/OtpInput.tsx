@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useRef } from "react";
 import { Controller, type Control } from "react-hook-form";
 
 type Props = {
@@ -22,22 +22,27 @@ export default function OtpInput({ control, name, length = 6 }: Props) {
       control={control}
       name={name}
       render={({ field, fieldState }) => {
-        const value = (field.value as string) || "";
+        const value = String(field.value ?? "");
         const error = fieldState.error?.message;
 
-        const digits = useMemo(
-          () => Array.from({ length }, (_, i) => value[i] ?? ""),
-          [value, length]
-        );
+        // Always produce fixed-length array
+        const digits = Array.from({ length }, (_, i) => value[i] ?? "");
 
-        const setAll = (otp: string) => {
-          field.onChange(otp.replace(/\D/g, "").slice(0, length));
+        const updateDigits = (nextDigits: string[]) => {
+          field.onChange(nextDigits.join(""));
         };
 
         const setAt = (index: number, digit: string) => {
-          const next = value.split("");
+          const next = [...digits];
           next[index] = digit;
-          field.onChange(next.join("").slice(0, length));
+          updateDigits(next);
+        };
+
+        const setAll = (otp: string) => {
+          const cleaned = otp.replace(/\D/g, "").slice(0, length);
+          const next = Array.from({ length }, (_, i) => cleaned[i] ?? "");
+          updateDigits(next);
+          focus(Math.min(cleaned.length, length - 1));
         };
 
         return (
@@ -60,24 +65,26 @@ export default function OtpInput({ control, name, length = 6 }: Props) {
                   }}
                   onKeyDown={(e) => {
                     if (e.key === "Backspace") {
-                      if (!digits[idx] && idx > 0) {
+                      e.preventDefault();
+
+                      if (digits[idx]) {
+                        // Clear current box
+                        setAt(idx, "");
+                      } else if (idx > 0) {
+                        // Move back and clear previous box
                         setAt(idx - 1, "");
                         focus(idx - 1);
-                      } else {
-                        setAt(idx, "");
                       }
                     }
+
                     if (e.key === "ArrowLeft" && idx > 0) focus(idx - 1);
                     if (e.key === "ArrowRight" && idx < length - 1) focus(idx + 1);
                   }}
                   onPaste={(e) => {
                     e.preventDefault();
-                    const paste = e.clipboardData.getData("text");
-                    const cleaned = paste.replace(/\D/g, "").slice(0, length);
-                    setAll(cleaned);
-                    focus(Math.min(cleaned.length, length - 1));
+                    setAll(e.clipboardData.getData("text"));
                   }}
-                  className={`h-14 w-14 rounded-xl border bg-white/5 text-center text-xl font-semibold text-white outline-none transition
+                  className={`md:h-14 md:w-14 h-10 w-10 rounded-xl border bg-white/5 text-center text-xl font-semibold text-white outline-none transition
                   ${
                     error
                       ? "border-red-500/40 focus:border-red-500/70"
