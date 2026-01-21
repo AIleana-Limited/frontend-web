@@ -17,7 +17,7 @@ const links = [
 const Header = () => {
       const pathname = usePathname();
   return (
-      <header className="h-18 flex justify-between items-center px-8">
+      <header className="h-18 lg:flex hidden justify-between items-center px-8">
           {/* Left: Search */}
         <div className="flex items-center gap-4">
           {/* Logo placeholder */}

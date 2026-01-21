@@ -14,7 +14,7 @@ const page = () => {
       <StoriesEmbla />
       <FeedList />
       </div>
-      <div className='col-span-1 hidden lg:block space-y-8 overflow-y-auto hide-scrollbar'>
+      <div className='col-span-1 hidden lg:block space-y-8 overflow-y-auto hide-scrollbar mb-20'>
         <RecentActivities />
         <ChatOnline />
         <CirclesCard />
