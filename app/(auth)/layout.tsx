@@ -5,7 +5,7 @@ import AuthSlider from "@/components/auth/AuthSlider"
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
 
   return (
-    <div className="grid h-screen lg:grid-cols-2 p-6">
+    <div className="grid h-screen lg:grid-cols-2 lg:p-6 p-2">
       <div className="bg-muted hidden relative md:block">
        <AuthSlider />
       </div>
