@@ -50,7 +50,7 @@ const Header = () => {
               href={href}
               className={clsx(
                 "relative flex h-full items-center justify-center transition-colors",
-                isActive ? "gap-2 text-blue-500" : "text-white/60 hover:text-white"
+                isActive ? "gap-2 text-blue-500" : "text-(--text-primary)/60 hover:text-(--text-primary)"
               )}
             >
               <Icon className="h-6 w-6" />
