@@ -7,7 +7,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 p-8 h-screen'>
+    <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 lg:p-8 p-4 h-screen'>
 
       <div className='col-span-2 space-y-4 overflow-y-auto hide-scrollbar'>
 

@@ -1,12 +1,11 @@
 "use client";
 
 import PostCard, { Post } from "@/components/feed/PostCard";
-import { Cricket, Shoe1, Shoe2, Shoe3, Live } from "@/public/post";
 
 const posts: Post[] = [
   {
     id: "1",
-    user: { name: "Indian Cricket Team", avatar: "/avatars/india.png" },
+    user: { name: "Indian Cricket Team", avatar: "/avatars/india.jpg" },
     time: "5h",
     visibility: "public",
     content:
@@ -45,30 +44,30 @@ const posts: Post[] = [
 
   {
     id: "4",
-    user: { name: "Tech News Hub", avatar: "/avatars/tech.png" },
+    user: { name: "Tech News Hub", avatar: "/avatars/tech.jpeg" },
     time: "1h",
     visibility: "public",
     content:
       "This UI layout is so clean. Would you prefer compact cards or full-width feed posts?",
-    image: "/posts/ui.jpg",
+    image: "/post/ui.jpg",
     stats: { likes: 842, comments: 90, reposts: 11, saves: 34, shares: 12 },
   },
 
   {
     id: "5",
-    user: { name: "Travel Diaries", avatar: "/avatars/travel.png" },
+    user: { name: "Travel Diaries", avatar: "/avatars/user2.png" },
     time: "30m",
     visibility: "public",
     content:
       "Sunset views + calm waters. One of the best evenings I’ve had this year 🌅✨",
-    image: "/posts/sunset.jpg",
+    image: "/post/travel.jpg",
     stats: { likes: 430, comments: 52, reposts: 5, saves: 18, shares: 7 },
   },
 ];
 
 export default function FeedList() {
   return (
-    <section className="flex w-full flex-col gap-6">
+    <section className="flex w-full flex-col gap-6 mb-20">
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
