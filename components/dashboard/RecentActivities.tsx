@@ -35,7 +35,7 @@ const activities = [
 
 export default function RecentActivities() {
   return (
-    <section className="w-full max-w-130 rounded-[28px] bg-white/5 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-xl">
+    <section className="w-full max-w-130 rounded-[28px] bg-white/5 p-6 shadow-md dark:shadow-[0_30px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/10 backdrop-blur-xl">
       {/* Header */}
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-medium text-(--text-primary)/70">
