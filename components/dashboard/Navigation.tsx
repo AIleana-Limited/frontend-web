@@ -21,19 +21,18 @@ const mainLinks = [
   { name: "Chat", href: "/chat", icon: MessageCircle },
   { name: "Shop", href: "/shop", icon: Store },
   { name: "Wallet", href: "/wallet", icon: Wallet },
-];
-
-const appLinks = [
-  { name: "Profile", href: "/profile", icon: CircleUser  },
+    { name: "Profile", href: "/profile", icon: CircleUser  },
   { name: "Settings", href: "/settings", icon: Bolt },
 ];
 
 /* -------------------- NAV SECTION COMPONENT -------------------- */
 function NavSection({
   links,
+  collapse,
   pathname,
 }: {
   links: { name: string; href: string; icon: any }[];
+  collapse : boolean;
   pathname: string;
 }) {
   return (
@@ -56,7 +55,7 @@ function NavSection({
               )}
             >
               <Icon className="w-6" />
-              <p className="hidden md:block font-medium">{name}</p>
+              <p className={`hidden md:block font-medium  ${!collapse ? "w-0 opacity-0" : "w-auto opacity-100"}`}>{name}</p>
             </Link>
           );
         })}
@@ -66,14 +65,12 @@ function NavSection({
 }
 
 /* -------------------- MAIN NAVIGATION COMPONENT -------------------- */
-export default function Navigation() {
+export default function Navigation({collapse } : {collapse : boolean;}) {
   const pathname = usePathname();
 
   return (
-    <section className="flex flex-col gap-8 p-4">
-      <NavSection links={mainLinks} pathname={pathname} />
-      <hr className="w-full h-0.2 bg-gray-900 mb-4"/>
-      <NavSection  links={appLinks} pathname={pathname} />
+    <section className="p-4">
+      <NavSection links={mainLinks} pathname={pathname}  collapse={collapse} />
     </section>
   );
 }

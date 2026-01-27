@@ -21,7 +21,7 @@ export default function StoriesEmbla() {
 
   return (
     <section>
-      <h3 className="mb-3 text-base font-semibold text-white/90">Stories</h3>
+      <h3 className="mb-3 text-xl font-semibold text-white/90">Stories</h3>
 
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-3">
