@@ -9,8 +9,8 @@ import { Favicon, Logo } from '@/app/assest/images'
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true);
   return (
-    <aside className={`hidden px-4 py-8 md:block shrink-0 "
-    ${collapsed ? "w-85" : "w-30"}`}>
+    <aside className={`hidden px-4 py-8 md:block shrink-0 transition-[width] duration-300 ease-in-out"
+    ${collapsed ? "w-85" : "w-30"} `}>
     <div className=" pb-10 flex flex-col gap-8 ">
       <div className='flex justify-between items-center'>
       <Image src={collapsed ? Logo : Favicon}
