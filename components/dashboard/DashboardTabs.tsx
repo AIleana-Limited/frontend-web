@@ -15,7 +15,7 @@ export default function DashboardTabs() {
   const pathname = usePathname();
 
   return (
-    <div className="rounded-2xl py-4 border bg-(--surface-1) border-white/10 p-2 shadow-sm backdrop-blur">
+    <div className="hidden lg:block rounded-2xl py-4 border bg-(--surface-1) border-white/10 p-2 shadow-sm backdrop-blur">
       <div className="flex items-center gap-2">
         {tabs.map((tab) => {
           const active = pathname === tab.href;
