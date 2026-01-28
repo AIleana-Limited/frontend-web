@@ -96,7 +96,7 @@ function reorder<T>(arr: T[], order: number[]): T[] {
 
 export const demoCreators1 = reorder(baseCreators, [0, 5, 9, 3, 4, 1,6,7,8,2]);
 
-export const demoCreators2 = reorder(baseCreators, [3, 0, 5, 1, 6, 2,7,8,9,3]);
+export const demoCreators2 = reorder(baseCreators, [3, 1, 6, 1, 5, 2,7,8,9,0]);
 
 export const demoCreators3 = reorder(baseCreators, [7, 3, 1, 9, 4, 0,5,6,8,2]);
 
