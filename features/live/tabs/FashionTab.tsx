@@ -6,6 +6,7 @@ export default function FashionTab() {
     <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       {demoCreators4.map((creator) => (
         <LiveCreatorCard
+        id={creator.id}
           key={creator.id}
           image={creator.image}
           name={creator.name}

@@ -1,6 +1,6 @@
 "use client";
 
-import PostCard, { Post } from "@/components/feed/PostCard";
+import PostCard, { Post } from "@/features/feed/PostCard";
 
 const posts: Post[] = [
   {

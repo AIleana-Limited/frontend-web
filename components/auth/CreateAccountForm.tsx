@@ -4,10 +4,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createAccountSchema, type CreateAccountSchema } from '@/schemas/auth-schemas'
 
-import FormInput from "@/components/form/FormInput";
-import FormPassword from "@/components/form/FormPassword";
-import FormDivider from "@/components/form/FormDivider";
-import SocialButton from "@/components/form/SocialButton";
+import FormInput from "@/features/auth/form/FormInput";
+import FormPassword from "@/features/auth/form/FormPassword";
+import FormDivider from "@/features/auth/form/FormDivider";
+import SocialButton from "@/features/auth/form/SocialButton";
 
 import { AiOutlineGoogle } from "react-icons/ai";
 import { IoLogoApple } from "react-icons/io5";

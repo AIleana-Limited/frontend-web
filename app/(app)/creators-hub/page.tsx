@@ -1,4 +1,4 @@
-import LiveTabs from '@/components/live/LiveTabs'
+import LiveTabs from '@/features/live/LiveTabs'
 import React from 'react'
 
 const page = () => {

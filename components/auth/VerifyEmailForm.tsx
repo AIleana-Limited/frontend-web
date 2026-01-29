@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import OtpInput from "@/components/otp/OtpInput";
+import OtpInput from "@/features/auth/otp/OtpInput";
 import { otpSchema, type OtpSchema } from "@/schemas/otp-schemas";
 import { LuBolt } from "react-icons/lu";
 

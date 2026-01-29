@@ -1,5 +1,5 @@
 import StoriesEmbla from '@/components/dashboard/Stories'
-import FeedList from '@/components/feed/FeedList'
+import FeedList from '@/features/feed/FeedList'
 import React from 'react'
 
 const page = () => {
