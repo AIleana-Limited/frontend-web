@@ -1,14 +1,13 @@
 "use client";
 
 import {
-    Home,
-    CircleUser,
+  Home,
+  CircleUser,
   Store,
   Wallet,
   MessageCircle,
   Megaphone,
-  Bolt
-
+  Bolt,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,46 +15,96 @@ import clsx from "clsx";
 
 /* -------------------- NAVIGATION DATA -------------------- */
 const mainLinks = [
-  { name: "Home", href: "/", icon: Home },
-  { name: "Circle", href: "/circle", icon: Megaphone },
-  { name: "Chat", href: "/chat", icon: MessageCircle },
-  { name: "Shop", href: "/shop", icon: Store },
-  { name: "Wallet", href: "/wallet", icon: Wallet },
-    { name: "Profile", href: "/profile", icon: CircleUser  },
-  { name: "Settings", href: "/settings", icon: Bolt },
+  {
+    name: "Home",
+    href: "/",
+    icon: Home,
+    match: ["/", "/videos", "/jobs", "/creators-hub"],
+  },
+  {
+    name: "Circle",
+    href: "/circle",
+    icon: Megaphone,
+    match: ["/circle"],
+  },
+  {
+    name: "Chat",
+    href: "/chat",
+    icon: MessageCircle,
+    match: ["/chat"],
+  },
+  {
+    name: "Shop",
+    href: "/shop",
+    icon: Store,
+    match: ["/shop"],
+  },
+  {
+    name: "Wallet",
+    href: "/wallet",
+    icon: Wallet,
+    match: ["/wallet"],
+  },
+  {
+    name: "Profile",
+    href: "/profile",
+    icon: CircleUser,
+    match: ["/profile"],
+  },
+  {
+    name: "Settings",
+    href: "/settings",
+    icon: Bolt,
+    match: ["/settings"],
+  },
 ];
 
-/* -------------------- NAV SECTION COMPONENT -------------------- */
+/* -------------------- ACTIVE MATCH HELPER -------------------- */
+function isRouteActive(match: string[], pathname: string) {
+  return match.some((route) =>
+    route === "/"
+      ? pathname === "/"
+      : pathname === route || pathname.startsWith(`${route}/`)
+  );
+}
+
+/* -------------------- NAV SECTION -------------------- */
 function NavSection({
   links,
   collapse,
   pathname,
 }: {
-  links: { name: string; href: string; icon: any }[];
-  collapse : boolean;
+  links: typeof mainLinks;
+  collapse: boolean;
   pathname: string;
 }) {
   return (
     <div className="hidden md:block">
-
       <nav className="flex flex-col gap-4">
-        {links.map(({ name, href, icon: Icon }) => {
-          const isActive = pathname === href;
+        {links.map(({ name, href, icon: Icon, match }) => {
+          const active = isRouteActive(match, pathname);
+
           return (
             <Link
               key={name}
               href={href}
               className={clsx(
-                "flex h-10 items-center gap-3 pl-3 text-[16px] transition-colors rounded-md",
+                "flex h-10 items-center gap-3 rounded-md pl-3 text-[16px] transition-colors",
                 "text-(--text-secondary) hover:bg-primary hover:text-white",
                 {
-                  "text-white bg-primary font-medium":
-                    isActive,
+                  "bg-primary text-white font-medium": active,
                 }
               )}
             >
               <Icon className="w-6" />
-              <p className={`hidden md:block font-medium  ${!collapse ? "w-0 opacity-0" : "w-auto opacity-100"}`}>{name}</p>
+              <span
+                className={clsx(
+                  "hidden md:block font-medium transition-all",
+                  collapse ? "w-auto opacity-100" : "w-0 opacity-0"
+                )}
+              >
+                {name}
+              </span>
             </Link>
           );
         })}
@@ -64,13 +113,96 @@ function NavSection({
   );
 }
 
-/* -------------------- MAIN NAVIGATION COMPONENT -------------------- */
-export default function Navigation({collapse } : {collapse : boolean;}) {
+/* -------------------- MAIN NAVIGATION -------------------- */
+export default function Navigation({ collapse }: { collapse: boolean }) {
   const pathname = usePathname();
 
   return (
     <section className="p-4">
-      <NavSection links={mainLinks} pathname={pathname}  collapse={collapse} />
+      <NavSection
+        links={mainLinks}
+        collapse={collapse}
+        pathname={pathname}
+      />
     </section>
   );
 }
+
+
+
+// "use client";
+
+// import {
+//     Home,
+//     CircleUser,
+//   Store,
+//   Wallet,
+//   MessageCircle,
+//   Megaphone,
+//   Bolt
+
+// } from "lucide-react";
+// import Link from "next/link";
+// import { usePathname } from "next/navigation";
+// import clsx from "clsx";
+
+// /* -------------------- NAVIGATION DATA -------------------- */
+// const mainLinks = [
+//   { name: "Home", href: "/", icon: Home },
+//   { name: "Circle", href: "/circle", icon: Megaphone },
+//   { name: "Chat", href: "/chat", icon: MessageCircle },
+//   { name: "Shop", href: "/shop", icon: Store },
+//   { name: "Wallet", href: "/wallet", icon: Wallet },
+//     { name: "Profile", href: "/profile", icon: CircleUser  },
+//   { name: "Settings", href: "/settings", icon: Bolt },
+// ];
+
+// /* -------------------- NAV SECTION COMPONENT -------------------- */
+// function NavSection({
+//   links,
+//   collapse,
+//   pathname,
+// }: {
+//   links: { name: string; href: string; icon: any }[];
+//   collapse : boolean;
+//   pathname: string;
+// }) {
+//   return (
+//     <div className="hidden md:block">
+
+//       <nav className="flex flex-col gap-4">
+//         {links.map(({ name, href, icon: Icon }) => {
+//           const isActive = pathname === href;
+//           return (
+//             <Link
+//               key={name}
+//               href={href}
+//               className={clsx(
+//                 "flex h-10 items-center gap-3 pl-3 text-[16px] transition-colors rounded-md",
+//                 "text-(--text-secondary) hover:bg-primary hover:text-white",
+//                 {
+//                   "text-white bg-primary font-medium":
+//                     isActive,
+//                 }
+//               )}
+//             >
+//               <Icon className="w-6" />
+//               <p className={`hidden md:block font-medium  ${!collapse ? "w-0 opacity-0" : "w-auto opacity-100"}`}>{name}</p>
+//             </Link>
+//           );
+//         })}
+//       </nav>
+//     </div>
+//   );
+// }
+
+// /* -------------------- MAIN NAVIGATION COMPONENT -------------------- */
+// export default function Navigation({collapse } : {collapse : boolean;}) {
+//   const pathname = usePathname();
+
+//   return (
+//     <section className="p-4">
+//       <NavSection links={mainLinks} pathname={pathname}  collapse={collapse} />
+//     </section>
+//   );
+// }
