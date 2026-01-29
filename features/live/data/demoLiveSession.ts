@@ -11,32 +11,37 @@ export const demoLiveSession = {
     viewers: 2400,
   },
   comments: [{
-    id: 1,
+    id: "1",
     user: {
+    id : "2",
       name: "Vivian",
       avatar: "/demo/creator-1.png",
     },
     message: "I love your Outfit♥",
   },
   {
-    id: 2,
+    id: "2",
     user: {
+         id : "5",
       name: "Loveth",
       avatar: "/demo/creator-1.png",
     },
     message: "I love you♥",
   },
   {
-    id: 3,
+    id: "3",
+
     user: {
+         id : "5",
       name: "Chike",
       avatar: "/demo/creator-6.png",
     },
     message: "😂",
   },
   {
-    id: 4,
+    id: "4",
     user: {
+         id : "7",
       name: "Destiny",
       avatar: "/demo/creator-2.png",
     },

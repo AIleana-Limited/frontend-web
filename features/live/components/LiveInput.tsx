@@ -3,7 +3,7 @@
 import { Smile } from "lucide-react";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
+import EmojiPicker, { EmojiClickData, Theme } from "emoji-picker-react";
 
 export default function LiveInput() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -52,7 +52,7 @@ export default function LiveInput() {
         {showEmoji && (
           <div className="absolute bottom-14 right-0 z-50">
             <EmojiPicker
-              theme="dark"
+              theme={Theme.DARK}
               onEmojiClick={handleEmojiClick}
               searchDisabled
               skinTonesDisabled
