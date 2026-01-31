@@ -1,6 +1,11 @@
 // components/LiveTopBar.tsx
-import { ArrowLeft, ShoppingBag, Mic, UsersRound, Handbag } from "lucide-react";
+import { Mic, UsersRound } from "lucide-react";
 import Image from "next/image";
+import { LiveProductsSheet } from "./LiveProductsSheet";
+
+
+
+
 
 type Props = {
   host: {
@@ -50,10 +55,9 @@ export default function LiveTopBar({ host, stats }: Props) {
     </div>
           <div className=" absolute right-4 top-25 rounded-full bg-black/90 px-4 py-2 text-base text-white gap-2 inline-flex place-content-center">
           <UsersRound className="w-5 h-5" /> {stats.viewers /1000}k watching
-        </div>    
-          <div className=" absolute left-4 top-25 rounded-full bg-[#0E225D] px-4 py-2 text-base text-white gap-2 inline-flex place-content-center">
-          <Handbag className="w-5 h-5" /> View Products
-        </div>    
+        </div>  
+
+         <LiveProductsSheet />   
     </div>
   );
 }
