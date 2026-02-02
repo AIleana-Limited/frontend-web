@@ -50,7 +50,7 @@ export default function LiveInput() {
 
         {/* Emoji picker */}
         {showEmoji && (
-          <div className="absolute bottom-14 right-0 z-50">
+          <div className=" absolute w-50 bottom-16 right-5 z-50">
             <EmojiPicker
               theme={Theme.DARK}
               onEmojiClick={handleEmojiClick}
