@@ -23,7 +23,7 @@ export function ProductCard({ title, price, image }: Props) {
         <p className="text-sm text-white/70">{price}</p>
 
         <button className="mt-2 w-full rounded-lg bg-blue-600 py-2 text-sm text-white">
-          View Info
+          Add to Cart
         </button>
       </div>
     </div>

@@ -13,12 +13,16 @@ const tabs = [
 
 export default function DashboardTabs() {
   const pathname = usePathname();
+   const isMenuActive = (href: string) => {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(href + "/");
+};
 
   return (
-    <div className="hidden lg:block rounded-2xl py-4 border bg-(--surface-1) border-white/10 p-2 shadow-sm backdrop-blur">
+    <div className="hidden lg:block rounded-2xl py-42border bg-(--surface-1) border-white/10 p-2 shadow-sm backdrop-blur">
       <div className="flex items-center gap-2">
         {tabs.map((tab) => {
-          const active = pathname === tab.href;
+          const active = isMenuActive(tab.href);
           const Icon = tab.icon;
 
           return (
@@ -41,7 +45,7 @@ export default function DashboardTabs() {
 
               {/* ✅ Active underline */}
               {active && (
-                <span className="absolute -bottom-4 left-0 right-4 h-[2px] rounded-full bg-blue-500" />
+                <span className="absolute -bottom-2 left-0 right-4 h-0.5 rounded-full bg-blue-500" />
               )}
             </Link>
           );
