@@ -9,6 +9,8 @@ export type PostType =
   | "audio"
   | "suggested_friends";
 
+/* -------------------- USERS & COMMENTS -------------------- */
+
 export type Comment = {
   id: string;
   user: {
@@ -20,10 +22,22 @@ export type Comment = {
   time: string;
 };
 
+/* -------------------- SUGGESTED FRIENDS -------------------- */
+
+export type SuggestedFriend = {
+  id: string;
+  name: string;
+  avatar: string;
+  mutuals?: number; // optional like Facebook
+};
+
+/* -------------------- FEED POST -------------------- */
+
 export type FeedPost = {
   id: string;
   type: PostType;
 
+  /* ---------- common post fields ---------- */
   user?: {
     name: string;
     avatar: string;
@@ -41,7 +55,7 @@ export type FeedPost = {
   audioUrl?: string;
   duration?: string;
 
-  hashtags?: string[]; // ✅ ADD THIS
+  hashtags?: string[];
 
   product?: {
     title: string;
@@ -57,4 +71,7 @@ export type FeedPost = {
   };
 
   comments?: Comment[];
+
+  /* ---------- suggested friends ONLY ---------- */
+  suggestions?: SuggestedFriend[];
 };

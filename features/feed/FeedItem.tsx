@@ -5,7 +5,7 @@ import TextPost from "./components/TextPost";
 // import LivePost from "./posts/LivePost";
 // import ProductPost from "./posts/ProductPost";
 import AudioPost from "./components/AudioPost";
-// import SuggestedFriends from "./posts/SuggestedFriends";
+import SuggestedFriends from "./components/suggested/SuggestedFriends";
 
 export default function FeedItem({ post }: { post: FeedPost }) {
   switch (post.type) {
@@ -25,8 +25,8 @@ export default function FeedItem({ post }: { post: FeedPost }) {
     case "audio":
       return <AudioPost post={post} />;
 
-    // case "suggested_friends":
-    //   return <SuggestedFriends />;
+    case "suggested_friends":
+      return <SuggestedFriends post={post} />;
 
     default:
       return null;

@@ -37,6 +37,7 @@ export const posts: FeedPost[] = [
   {
   id: "2",
   type: "audio",
+  visibility: "public",
   user: { name: "Aisha", avatar: "/avatars/user2.png" },
   content:
     "I didn’t write this to be read. I recorded it to be heard...\n\nThere’s something about a human voice that text can’t carry — the pauses, the breath, the feeling between the words.\n\nThis one is short. But if you listen closely, it might stay with you longer than you expect.",
@@ -127,6 +128,37 @@ export const posts: FeedPost[] = [
   {
     id: "5",
     type: "suggested_friends",
-    // no comments, no stats (Facebook style)
+    suggestions: [
+      {
+        id: "u1",
+        name: "Micheal Jordan",
+        avatar: "/demo/creator-4.jpg",
+        mutuals: 12,
+      },
+      {
+        id: "u2",
+        name: "Steph Curry",
+        avatar: "/demo/creator-3.jpg",
+        mutuals: 8,
+      },
+      {
+        id: "u3",
+        name: "Steve Jobs",
+        avatar: "/demo/creator-1.png",
+        mutuals: 5,
+      },
+      {
+        id: "u1",
+        name: "Micheal Jordan",
+        avatar: "/demo/creator-4.jpg",
+        mutuals: 12,
+      },
+      {
+        id: "u2",
+        name: "Steph Curry",
+        avatar: "/demo/creator-3.jpg",
+        mutuals: 8,
+      }
+    ],
   },
 ];
