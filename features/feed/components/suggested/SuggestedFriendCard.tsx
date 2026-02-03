@@ -10,8 +10,8 @@ export default function SuggestedFriendCard({
   mutuals?: number;
 }) {
   return (
-    <div className="w-[180px] shrink-0 rounded-xl bg-(--surface-1) p-3">
-      <div className="relative h-32 w-full overflow-hidden rounded-lg">
+    <div className="w-60 shrink-0 rounded-xl bg-(--surface-1) p-3">
+      <div className="relative h-60 w-full overflow-hidden rounded-lg">
         <Image
           src={avatar}
           alt={name}
