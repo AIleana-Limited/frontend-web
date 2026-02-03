@@ -125,6 +125,7 @@ export const posts: FeedPost[] = [
     ],
   },
 
+
   {
     id: "5",
     type: "suggested_friends",
@@ -159,6 +160,37 @@ export const posts: FeedPost[] = [
         avatar: "/demo/creator-3.jpg",
         mutuals: 8,
       }
+    ],
+  },
+    {
+    id: "6",
+    type: "text",
+    user: { name: "Brian Cage", avatar: "/avatars/user2.png" },
+    time: "2h",
+    visibility: "public",
+    content: "Arsenal is going to win... 🥶🥶",
+    stats: { likes: 12, comments: 2, shares: 1 },
+    comments: [
+      {
+        id: "c1",
+        user: {
+          name: "Vivian",
+          avatar: "/avatars/user3.png",
+        },
+        message: "I pray so oo 😭",
+        likes: 2,
+        time: "1h",
+      },
+      {
+        id: "c2",
+        user: {
+          name: "David",
+          avatar: "/avatars/user4.png",
+        },
+        message: "Ok motigbo 😂",
+        likes: 0,
+        time: "45m",
+      },
     ],
   },
 ];
