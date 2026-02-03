@@ -35,28 +35,34 @@ export const posts: FeedPost[] = [
   },
 
   {
-    id: "2",
-    type: "audio",
-    user: { name: "Aisha", avatar: "/avatars/user2.png" },
-    content:
-      "I didn’t write this to be read. I recorded it to be heard...",
-    audioUrl: "/audio/demo.mp3",
-    duration: "07:19",
-    stats: { likes: 324, comments: 54, shares: 12 },
-    comments: [
-      {
-        id: "c3",
-        user: {
-          name: "Sarah",
-          avatar: "/avatars/user5.png",
-        },
-        message: "This touched me deeply ❤️",
-        likes: 12,
-        time: "3h",
+  id: "2",
+  type: "audio",
+  user: { name: "Aisha", avatar: "/avatars/user2.png" },
+  content:
+    "I didn’t write this to be read. I recorded it to be heard...\n\nThere’s something about a human voice that text can’t carry — the pauses, the breath, the feeling between the words.\n\nThis one is short. But if you listen closely, it might stay with you longer than you expect.",
+  audioUrl: "/audio/demo.mp3",
+  duration: "07:19",
+  hashtags: [
+    "AudioPost",
+    "VoiceAndMeaning",
+    "SoundOverScroll",
+    "CreativeExpression",
+    "ListenMore",
+  ],
+  stats: { likes: 324, comments: 54, shares: 12 },
+  comments: [
+    {
+      id: "c3",
+      user: {
+        name: "Sarah",
+        avatar: "/avatars/user5.png",
       },
-    ],
-  },
-
+      message: "This touched me deeply ❤️",
+      likes: 12,
+      time: "3h",
+    },
+  ],
+},
   {
     id: "3",
     type: "product",

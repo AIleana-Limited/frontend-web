@@ -4,7 +4,7 @@ import TextPost from "./components/TextPost";
 // import ImagePost from "./posts/ImagePost";
 // import LivePost from "./posts/LivePost";
 // import ProductPost from "./posts/ProductPost";
-// import AudioPost from "./posts/AudioPost";
+import AudioPost from "./components/AudioPost";
 // import SuggestedFriends from "./posts/SuggestedFriends";
 
 export default function FeedItem({ post }: { post: FeedPost }) {
@@ -22,8 +22,8 @@ export default function FeedItem({ post }: { post: FeedPost }) {
     // case "product":
     //   return <ProductPost post={post} />;
 
-    // case "audio":
-    //   return <AudioPost post={post} />;
+    case "audio":
+      return <AudioPost post={post} />;
 
     // case "suggested_friends":
     //   return <SuggestedFriends />;

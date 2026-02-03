@@ -41,6 +41,8 @@ export type FeedPost = {
   audioUrl?: string;
   duration?: string;
 
+  hashtags?: string[]; // ✅ ADD THIS
+
   product?: {
     title: string;
     price: string;
@@ -54,16 +56,5 @@ export type FeedPost = {
     shares: number;
   };
 
-  /** ✅ ADD THIS */
   comments?: Comment[];
-};
-
-export type PostStats = {
-  likes: number;
-  comments: number;
-  shares: number;
-};
-
-export type PostActionsState = {
-  liked: boolean;
 };
