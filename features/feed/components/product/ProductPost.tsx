@@ -61,7 +61,7 @@ export default function ProductPost({ post }: any) {
           <img
             src={activeImage}
             alt={post.product?.title}
-            className="h-160 w-full object-cover"
+            className="h-120 w-full object-cover"
           />
 
             {/* FLOATING ACTIONS (RIGHT) */}

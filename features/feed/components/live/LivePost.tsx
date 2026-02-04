@@ -62,7 +62,7 @@ export default function LivePost({ post }: { post: FeedPost }) {
           alt={post.product.title}
           width={800}
           height={600}
-          className="h-150 w-full object-cover"
+          className="h-120 w-full object-cover"
         />
 
         {/* LIVE BADGE */}
