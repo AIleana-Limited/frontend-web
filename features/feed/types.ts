@@ -61,9 +61,15 @@ export type FeedPost = {
     title: string;
     price: string;
     images: string[];
+    description?: string;
     isLive?: boolean;
   };
 
+   liveMeta?: {
+    watchingCount: number; // 👈 total watching
+    viewers: string[];     // 👈 avatars (URLs)
+  };
+  
   stats?: {
     likes: number;
     comments: number;

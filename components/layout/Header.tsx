@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { Search, Bell, ShoppingCart } from "lucide-react";
+import { Search, Bell, ShoppingCart, Gift } from "lucide-react";
 
 
 
@@ -32,6 +32,9 @@ const Header = () => {
         
         {/* Right: icons */}
         <div className="flex items-center gap-8">
+             <button className="grid h-10 w-10 place-items-center rounded-full  transition bg-background text-(--text-primary) p-1">
+            <Gift  className="h-5 w-5" />
+          </button>
              <button className="grid h-10 w-10 place-items-center rounded-full  transition bg-background text-(--text-primary) p-1">
             <ShoppingCart  className="h-5 w-5" />
           </button>
