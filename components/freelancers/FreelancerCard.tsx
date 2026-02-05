@@ -1,5 +1,6 @@
 import { MapPin, Star } from "lucide-react";
 import { Freelancer } from '@/types/freelancer'
+import Link from "next/link";
 
 type Props = {
   freelancer: Freelancer;
@@ -65,9 +66,17 @@ export default function FreelancerCard({ freelancer }: Props) {
 
       {/* Actions */}
       <div className="mt-4 grid grid-cols-2 gap-3">
-        <button className="h-10 rounded-xl border border-blue-500/40 text-sm hover:bg-white/5">
-          View Details
-        </button>
+     <Link
+  href={`/jobs/freelancers/${freelancer.id}`}
+  className="
+    flex h-10 items-center justify-center
+    rounded-xl border border-blue-500/40
+    text-sm text-white
+    hover:bg-white/5
+  "
+>
+  View Details
+</Link>
         <button className="h-10 rounded-xl bg-blue-700/70 text-sm hover:bg-blue-700">
           Send Message
         </button>
