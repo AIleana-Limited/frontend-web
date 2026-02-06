@@ -38,8 +38,8 @@ export default function PostComposer({
       {/* Textarea */}
       <textarea
         placeholder="What's on your mind today?"
-        className="resize-none w-full bg-transparent p-4 text-sm 
-        outline-none placeholder:text-white/40"
+        className="resize-none w-full  h-[80%] bg-transparent hide-scrollbar p-4 text-sm 
+        outline-none placeholder:text-white/40 "
       />
 
          <div>

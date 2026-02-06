@@ -3,9 +3,9 @@ import {
   Tv,
   Image as ImageIcon,
   Video,
-  ShoppingBag,
   AudioLines,
 } from "lucide-react";
+import ProductPostDialog from "../productPost/components/ProductPostDialog";
 
 export default function PostActions() {
   return (
@@ -48,14 +48,7 @@ export default function PostActions() {
       </button>
 
       {/* Product */}
-      <button
-        onClick={() => console.log("Product")}
-        className="flex items-center justify-center gap-2 rounded-full border border-white/10
-        bg-black/40 px-4 py-3 text-sm text-white hover:bg-white/5"
-      >
-        <ShoppingBag size={16} className="text-yellow-400" />
-        Product
-      </button>
+     <ProductPostDialog />
 
       {/* Audio */}
       <button
