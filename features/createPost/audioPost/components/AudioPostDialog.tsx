@@ -40,7 +40,14 @@ export default function AudioPostDialog() {
         Audio
       </button>
           </DialogTrigger>
-    <DialogContent className="max-w-xl flex flex-col overflow-hidden rounded-2xl bg-(--surface-1) p-0 text-white">
+    <DialogContent className="max-w-xl
+  h-[80vh]
+  flex
+  flex-col
+  overflow-hidden
+  rounded-2xl
+  bg-(--surface-1)
+  p-0 text-(--text-primary)">
 
       {/* HEADER */}
       <DialogHeader className="border-b border-white/10 px-6 py-4">
@@ -50,7 +57,7 @@ export default function AudioPostDialog() {
       {/* FORM */}
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-1 flex-col"
+        className="overflow-y-auto hide-scrollbar"
       >
         {/* SCROLLABLE BODY */}
         <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5 hide-scrollbar">
