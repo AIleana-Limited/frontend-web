@@ -7,6 +7,8 @@ import { audioPostSchema, AudioPostFormValues } from "../schema/audioPostSchema"
 import { useAudioRecorder } from "../hooks/useAudioRecorder";
 import AudioRecorder from "./AudioRecorder";
 import { AudioLines } from "lucide-react";
+import PostEmojiPicker from "../../components/PostEmojiPicker";
+import WriteWithAIVA from "../../components/WriteWithAIVA";
 
 export default function AudioPostDialog() {
   const recorder = useAudioRecorder();
@@ -92,11 +94,27 @@ export default function AudioPostDialog() {
           )}
 
           {/* CAPTION */}
-          <textarea
-            {...form.register("caption")}
-            placeholder="What's on your mind today?"
-            className="min-h-30 hide-scrollbar w-full rounded-xl bg-white/5 p-4 text-sm outline-none placeholder:text-white/40"
-          />
+            <div className=" relative border border-gray-700 flex-1 mt-4 rounded-3xl">
+              {/* Textarea */}
+              <textarea
+                placeholder="What's on your mind today?"
+                className="resize-none w-full  min-h-40 bg-transparent hide-scrollbar p-4 text-sm 
+                outline-none placeholder:text-white/40 "
+              />
+        
+                 <div>
+                 {/* Emoji */}
+                <div className="absolute bottom-3 left-3">
+                  <PostEmojiPicker />
+                </div>
+        
+                {/* AIVA */}
+                <div className="absolute bottom-3 right-3">
+                  <WriteWithAIVA/>
+                </div>    
+                </div>     
+            </div>
+
 
           {/* ACTION SHORTCUTS */}
           <div className="grid grid-cols-3 gap-3">
