@@ -32,15 +32,18 @@ const Header = () => {
         
         {/* Right: icons */}
         <div className="flex items-center gap-8">
-             <button className="grid h-10 w-10 place-items-center rounded-full  transition bg-background text-(--text-primary) p-1">
+             <button className="relative h-10 w-10 place-items-center rounded-full  transition bg-background text-(--text-primary) p-1">
             <Gift  className="h-5 w-5" />
+<div className="absolute px-1  text-xs bg-red-600 rounded-full top-1 -right-2">300</div>
           </button>
-             <button className="grid h-10 w-10 place-items-center rounded-full  transition bg-background text-(--text-primary) p-1">
+             <button className="relative h-10 w-10 place-items-center rounded-full  transition bg-background text-(--text-primary) p-1">
             <ShoppingCart  className="h-5 w-5" />
+        <div className="absolute px-1 text-xs bg-red-600 rounded-full top-1 -right-2">10</div>
           </button>
           
-          <button className="grid h-10 w-10 place-items-center rounded-full bg-background text-(--text-primary) p-1">
+          <button className="relative h-10 w-10 place-items-center rounded-full bg-background text-(--text-primary) p-1">
             <Bell className="h-5 w-5" />
+            <div className="absolute px-1 text-xs bg-red-600 rounded-full top-1 -right-2">3</div>
           </button>
         </div>
         </header>

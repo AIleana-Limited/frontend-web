@@ -6,6 +6,7 @@ import {
   AudioLines,
 } from "lucide-react";
 import ProductPostDialog from "../productPost/components/ProductPostDialog";
+import AudioPostDialog from "../audioPost/components/AudioPostDialog";
 
 export default function PostActions() {
   return (
@@ -51,14 +52,7 @@ export default function PostActions() {
      <ProductPostDialog />
 
       {/* Audio */}
-      <button
-        onClick={() => console.log("Audio")}
-        className="flex items-center justify-center gap-2 rounded-full border border-white/10
-        bg-black/40 px-4 py-3 text-sm text-white hover:bg-white/5"
-      >
-        <AudioLines size={16} className="text-blue-400" />
-        Audio
-      </button>
+        <AudioPostDialog />
     </div>
   );
 }
