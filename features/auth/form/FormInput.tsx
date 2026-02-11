@@ -28,18 +28,18 @@ export default function FormInput({
 
         return (
           <div className={`space-y-2 ${className}`}>
-            <label className="text-sm text-(--text-primary)/80">{label}</label>
+            <label className="text-sm text-(--text-primary)/80 mb-2">{label}</label>
 
             <input
               {...field}
               type={type}
               placeholder={placeholder}
-              className={`h-11 w-full rounded-xl border bg-white/5 px-4 text-sm text-(--text-primary) outline-none transition
-              placeholder:text-white/30
+              className={`h-11 w-full rounded-xl border bg-(--surface-1) px-4 text-sm text-(--text-primary) outline-none transition
+              placeholder:text-(--text-primary)/40
               ${
                 error
                   ? "border-red-500/40 focus:border-red-500/60"
-                  : "border-white/10 focus:border-white/20"
+                  : "border-border focus:border-border"
               }`}
             />
 

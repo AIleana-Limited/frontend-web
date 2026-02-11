@@ -11,23 +11,23 @@ type Slide = {
 
 const slides: Slide[] = [
       {
-    image: "/auth/customer.jpg",
+    image: "/auth/support-1.webp",
     brand: "Alleana",
     tagline: "Build faster. Work smarter.",
   },
   {
-    image: "/auth/vendor.webp",
+    image: "/auth/support-2.jpg",
     brand: "Alleana",
     tagline: "Something has to be here",
   },
   {
-    image: "/auth/online-shop.jpeg",
+    image: "/auth/support-1.webp",
     brand: "Alleana",
     tagline: "The future of real estate",
   },
 ];
 
-export default function AuthSlider() {
+export default function SupportAuthSlider() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
 

@@ -9,6 +9,7 @@ type FormPasswordProps = {
   name: string;
   label: string;
   placeholder?: string;
+  className?: string;
 };
 
 export default function FormPassword({
@@ -16,6 +17,7 @@ export default function FormPassword({
   name,
   label,
   placeholder,
+className
 }: FormPasswordProps) {
   const [show, setShow] = useState(false);
 
@@ -27,28 +29,28 @@ export default function FormPassword({
         const error = fieldState.error?.message;
 
         return (
-          <div className="space-y-2">
-            <label className="text-sm text-white/70">{label}</label>
+          <div className={`space-y-2 ${className}`}>
+            <label className="text-sm text-(--text-primary)/80">{label}</label>
 
             <div
-              className={`flex h-11 w-full items-center gap-2 rounded-xl border bg-white/5 px-4 transition
+              className={`flex h-11 w-full items-center gap-2 rounded-xl border bg-(--surface-1) px-4 transition
               ${
                 error
                   ? "border-red-500/40 focus-within:border-red-500/60"
-                  : "border-white/10 focus-within:border-white/20"
+                  : "border-border focus-within:border-border"
               }`}
             >
               <input
                 {...field}
                 type={show ? "text" : "password"}
                 placeholder={placeholder}
-                className="h-full w-full bg-transparent text-sm text-white outline-none placeholder:text-white/30"
+                className="h-full w-full bg-transparent text-sm text-(--text-primary) outline-none placeholder:text-(--text-primary)/40"
               />
 
               <button
                 type="button"
                 onClick={() => setShow((p) => !p)}
-                className="text-white/40 hover:text-white/70"
+                className="text-(--text-primary)/60 hover:text-(--text-primary)/70"
               >
                 {show ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
