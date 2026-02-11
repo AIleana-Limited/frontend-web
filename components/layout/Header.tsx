@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { Search, Bell, ShoppingCart, Gift } from "lucide-react";
+import SearchCommand from "../shared/SearchCommand";
 
 
 
@@ -15,7 +16,7 @@ const Header = () => {
         <div className="flex items-center gap-4">
 
           {/* Search input */}
-          <div className="flex h-15 lg:ml-10 lg:w-150 w-full items-center gap-2 rounded-lg border border-border bg-background/80 px-4 shadow-inner shadow-black/20">
+          {/* <div className="flex h-15 lg:ml-10 lg:w-150 w-full items-center gap-2 rounded-lg border border-border bg-background/80 px-4 shadow-inner shadow-black/20">
              <input
     type="text"
     placeholder="Search on Alleana"
@@ -25,7 +26,10 @@ const Header = () => {
             <div className="ml-auto flex items-center justify-center">
               <Search className="h-4 w-4 text-(--text-primary)/60" />
             </div>
-          </div>
+           
+            
+          </div> */}
+           <SearchCommand />
         </div>
 
         {/* Navigation */}
